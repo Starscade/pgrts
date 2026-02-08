@@ -1,4 +1,4 @@
-import PostgREST from 'https://raw.githubusercontent.com/Starscade/pgrst-js/refs/heads/main/src/pgrst.esm.js'
+import PostgREST from 'https://raw.githubusercontent.com/Starscade/pgrst-js/refs/heads/main/dist/pgrst.esm.js'
 
 const SQL = new PostgREST({
 	pgrst_url: Deno.env.get('PGRTS_HOST'),
