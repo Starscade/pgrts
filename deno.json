@@ -5,5 +5,8 @@
 		"singleQuote": true,
 		"useTabs": true
 	},
-	"lock": false
+	"lock": false,
+	"tasks": {
+		"healthcheck": "deno run --allow-env --allow-import --allow-net scripts/deno-healthcheck.ts"
+	}
 }
