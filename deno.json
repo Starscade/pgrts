@@ -13,5 +13,5 @@
 		"bundle": "deno bundle --minify src/mod.ts --output dist/pgrst.esm.js",
 		"healthcheck": "deno run --allow-env --allow-import --allow-net scripts/deno-healthcheck.ts"
 	},
-	"version": "0.1.1"
+	"version": "0.1.2"
 }
