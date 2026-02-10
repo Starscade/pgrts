@@ -1,4 +1,9 @@
 export default class {
+
+	pgrst_url: string
+	schema: string
+	jwt: string
+
 	constructor({
 		pgrst_url = 'localhost:3000',
 		schema = 'public',
@@ -13,10 +18,10 @@ export default class {
 		query_string = '',
 		query_body = null,
 		query_operation = 'INSERT',
-	) {
+	): Promise<void> {
 		let response = null
 		if (query_body) {
-			const heads = {
+			const heads: Record<string, string> = {
 				'Content-Type': 'application/json',
 				'Content-Profile': this.schema,
 				'Accept': 'application/vnd.pgrst.object+json',
@@ -45,7 +50,7 @@ export default class {
 				{ ...fetch_obj },
 			)
 		} else {
-			const heads = {
+			const heads: Record<string, string> = {
 				'Accept-Profile': this.schema,
 			}
 			if (this.jwt) {

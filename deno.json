@@ -1,13 +1,17 @@
 {
+	"exports": "./src/mod.ts",
 	"fmt": {
 		"lineWidth": 80,
 		"semiColons": false,
 		"singleQuote": true,
 		"useTabs": true
 	},
+	"license": "MIT",
 	"lock": false,
+	"name": "@starscade/pgrts",
 	"tasks": {
-		"bundle": "deno bundle --minify src/pgrst.js --output dist/pgrst.esm.js",
+		"bundle": "deno bundle --minify src/mod.ts --output dist/pgrst.esm.js",
 		"healthcheck": "deno run --allow-env --allow-import --allow-net scripts/deno-healthcheck.ts"
-	}
+	},
+	"version": "0.1.0"
 }
