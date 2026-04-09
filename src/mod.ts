@@ -14,7 +14,7 @@ export default class {
 	jwt: string
 
 	constructor({
-		pgrst_url = 'localhost:3000',
+		pgrst_url = 'http://localhost:3000',
 		schema = 'public',
 		jwt = '',
 	} = {}) {
