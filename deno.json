@@ -10,7 +10,7 @@
 	"lock": false,
 	"name": "@starscade/postgrets",
 	"tasks": {
-		"check": "deno lint src && deno fmt --check src && deno check src",
+		"check": "deno lint src && deno fmt src && deno check src",
 		"make": "deno task check && deno bundle --minify --output _esm/postgrets.esm.js --platform browser src/mod.ts",
 		"test": "deno run --allow-env --allow-import --allow-net --env-file --unsafely-ignore-certificate-errors src/test.ts"
 	},
