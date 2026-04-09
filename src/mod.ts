@@ -23,6 +23,7 @@ export default class {
 		this.jwt = jwt
 	}
 
+
 	/**
 	 * @param query_string Any PostgREST-style SQL query.
 	 * @param query_body Values for INSERT/UPDATE statements. (Defaults to null.)
@@ -42,14 +43,17 @@ export default class {
 				'Accept': 'application/vnd.pgrst.object+json',
 				'Prefer': 'resolution=merge-duplicates, return=representation',
 			}
+
 			if (this.jwt) {
 				heads['Authorization'] = 'Bearer ' + this.jwt
 			}
+
 			let fetch_obj = {
 				method: 'POST',
 				headers: heads,
 				body: JSON.stringify(query_body),
 			}
+
 			if (query_operation) {
 				switch (query_operation.toUpperCase()) {
 					case 'DELETE':
@@ -59,7 +63,9 @@ export default class {
 						fetch_obj.method = 'PATCH'
 						break
 				}
+
 			}
+
 			response = await fetch(
 				this.pgrst_url + '/' + query_string,
 				{ ...fetch_obj },
@@ -68,9 +74,11 @@ export default class {
 			const heads: Record<string, string> = {
 				'Accept-Profile': this.schema,
 			}
+
 			if (this.jwt) {
 				heads['Authorization'] = 'Bearer ' + this.jwt
 			}
+
 			response = await fetch(
 				this.pgrst_url + '/' + query_string,
 				{
@@ -78,6 +86,8 @@ export default class {
 				},
 			)
 		}
+
 		return await response.json()
 	}
+
 }
