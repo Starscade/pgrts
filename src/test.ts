@@ -1,4 +1,4 @@
-import PostgREST from './mod.ts'
+import PostgREST from '../esm/postgrets.esm.js'
 
 const SQL = new PostgREST({
 	pgrst_url: Deno.env.get('PGRTS_HOST') ?? 'http://localhost:3000',
