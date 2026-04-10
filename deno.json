@@ -12,7 +12,7 @@
 	"tasks": {
 		"check": "deno lint src && deno fmt src && deno check src",
 		"make": "deno task check && deno bundle --minify --output dist/postgrets.esm.js --platform browser src/mod.ts",
-		"test": "deno run --allow-env --allow-import --allow-net --env-file --unsafely-ignore-certificate-errors src/test.ts"
+		"test": "deno task make && deno run --allow-env --allow-import --allow-net --env-file --unsafely-ignore-certificate-errors src/test.ts"
 	},
 	"version": "0.1.0"
 }
